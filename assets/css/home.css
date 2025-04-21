@@ -3,7 +3,7 @@
 
 .hero {
     height: 100vh;
-    background-image: url('https://img.freepik.com/free-photo/group-creative-friends-sitting-wooden-table-people-were-having-fun-while-playing-board-game_146671-15242.jpg?t=st=1745246461~exp=1745250061~hmac=ae2376ecc4dbc41290c31494d367c0d92119fbdc7ce7d8c309dc6f0df86a5b2c&w=1380');
+    background-image: url('https://img.freepik.com/free-photo/medium-shot-smiley-friends-with-sushi_23-2149957085.jpg?t=st=1745264112~exp=1745267712~hmac=50273d339439b935ba8982549db1083f338a212ed1f710474dace4d4071a8629&w=1380');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -16,64 +16,98 @@
     overflow: hidden;
 }
 
-.hero::after {
+.hero::before {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); /* можно сделать 0.6 или 0.7 если хочешь темнее */
     z-index: 1;
 }
 
 .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
     position: relative;
-    z-index: 2;
-    animation: fadeInUp 1.5s ease forwards;
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    z-index: 3;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-}
-
-.hero a.button {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #ff6600;
+    font-size: 48px;
+    margin-bottom: 20px;
     color: white;
-    text-decoration: none;
-    border-radius: 25px;
+
+}
+
+.hero .sub-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.features li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stats div {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 15px 20px;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.stats span {
+    font-size: 24px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    display: block;
 }
 
-.hero a.button:hover {
-    background-color: #e65c00;
+.button {
+    background-color: #fdd835;
+    color: #101820;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
+.button:hover {
+    background-color: #fff176;
+}
+
+/* Адаптив */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2rem;
+        font-size: 32px;
     }
 
-    .hero p {
-        font-size: 1rem;
+    .features {
+        text-align: center;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
     }
 }
-
 
 
 .services {
@@ -379,23 +413,16 @@
     background: #f8f9fb;
     border-radius: 12px;
     padding: 30px 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .price-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
-.price-card.highlight {
-    background: #004aad;
-    color: white;
-}
 
-.price-card.highlight ul li {
-    color: white;
-}
 
 .price-card h3 {
     font-size: 1.6rem;
@@ -436,14 +463,6 @@
     background: #003080;
 }
 
-.price-card.highlight .price-btn {
-    background: white;
-    color: #004aad;
-}
-
-.price-card.highlight .price-btn:hover {
-    background: #e0e0e0;
-}
 
 
 
